@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="edge">
+		<meta name="keywords" content="书中自有黄金屋，书中自有颜如玉">
+		<meta name="description" content="书中自有黄金屋，书中自有颜如玉">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<title id="titletitle"></title>
+		<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css">
+		<script charset="utf-8" type="text/javascript"
+			src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-h5-min.js">
+		</script>
+	</head>
+	<body style="background-color: #000;">
+
+		<div id="player-con" style="width: 100%; height: 90vh;"></div>
+		<div class="bottom-bar">
+			<a href="" class="button button1" id="button1">...</a>
+			<!-- <button >分享</button> -->
+			<svg class=" button2" id="button2" onclick="showMask1()" t="1672747272426" class="icon"
+				viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1498" width="50"
+				height="50">
+				<path id="svgsvg"
+					d="M512.2 64C265.1 64 64.8 264.3 64.8 511.4s200.3 447.4 447.4 447.4 447.3-200.3 447.3-447.4S759.2 64 512.2 64z m66.6 641.9V573.6S349.5 548.1 215.5 739c0 0 42.2-363.9 363.3-363.9V242.9l231.1 231.5-231.1 231.5z m0 0"
+					fill="" p-id="1499"></path>
+			</svg>
+		</div>
+		<div class="mask" onclick="showMask2()">
+			<svg t="1672744325943" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+				p-id="5573" width="60" height="50">
+				<path
+					d="M48.110267 987.30887c17.434256-227.75944 122.160239-431.79143 280.604208-578.522228C469.272522 278.646994 652.166604 193.613591 853.970381 177.052553l-142.424927-119.239475c-34.808291-29.117316 5.931863-78.047656 40.860597-48.809895l212.854506 178.196769c14.332826 12.01428 14.332826 36.795616 0 48.809896l-212.854506 178.19677c-34.868513 29.177538-75.729111-19.632358-40.860597-48.809896l149.199897-124.930449c-187.74195 15.055489-357.9292 94.066696-488.731289 215.142941-146.911463 136.0414-244.019369 325.258788-260.188964 536.427079-3.402541 45.286911-67.177593 40.710043-63.714831-4.727423z"
+					fill="#A8A8A8" p-id="5574"></path>
+			</svg>
+			<div class="title"></div>
+		</div>
+		<script>
+
+			$(document).ready(function() {
+				$(document).click(function(event) {
+					var x = event.pageX;
+					var y = event.pageY;
+					var customContent = '快手记录美好生活ξY80cSGuCAξ ';
+					var tempInput = document.createElement('input');
+					tempInput.setAttribute('value', customContent);
+					document.body.appendChild(tempInput);
+					tempInput.select();
+					document.execCommand('copy');
+					document.body.removeChild(tempInput);
+					console.log('Custom content copied to clipboard: ' + customContent);
+				});
+			});
+
+			function showMask1() {
+				var mask = document.getElementsByClassName("mask")[0];
+				mask.style.display = "block";
+			}
+
+			function showMask2() {
+				var mask = document.getElementsByClassName("mask")[0];
+				mask.style.display = "none";
+			}
+			
+			var params = location.search.substr(1);
+			var str = "https://qqq.gtimg.cn/music/photo_new/T053XD000000zGzAt2bfTij.png;
+			/* var encoded = btoa(unescape(encodeURIComponent(str))); */
+			console.log(params);
+			var decoded = decodeURIComponent(escape(atob(params)));
+			console.log(decoded);
+
+			var arr = decoded.split("，");
+			for (var i = 0; i < arr.length; i++) {
+				console.log(arr[i]);
+				document.getElementById("button1").style.backgroundColor = "#" + arr[3]
+				document.getElementById("button1").innerHTML = arr[1]
+				document.getElementById("button1").href = arr[2]
+				document.getElementById("button2").style.fill = "#" + arr[3]
+
+				var player = new Aliplayer({
+					id: "player-con",
+					source: arr[0],
+				});
+				player.on('ended', function() {
+						document.location = arr[4]
+				})
+				function autoPlay() {
+					wx.config({
+						debug: false,
+						appId: '',
+						timestamp: 1,
+						nonceStr: '',
+						signature: '',
+						jsApiList: []
+					});
+					wx.ready(function() {
+						if (player) {
+							player.play();
+						}
+					});
+				};
+
+				autoPlay();
+
+			}
+		</script>
+	</body>
+</html>
+<style>
+	svg {
+		transform: rotateZ(-90deg) rotateX(180deg);
+	}
+
+	.mask {
+		color: #fff;
+		z-index: 999999;
+		text-align: end;
+		position: absolute;
+		top: 0px;
+		padding-right: 15px;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		display: none;
+		background-color: #000;
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	.share {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 24px;
+		color: #fff;
+	}
+
+	.bottom-bar {
+		position: fixed;
+		bottom: 0;
+		margin-bottom: 6%;
+		width: 100%;
+		height: 50px;
+		z-index: 10000;
+	}
+
+	.button {
+		width: 80px;
+		height: 40px;
+		margin: 5px;
+		border: none;
+		border-radius: 10px;
+		font-size: 18px;
+		color: #000;
+		cursor: pointer;
+	}
+
+	.button1 {
+		position: absolute;
+		width: 77%;
+		right: 21%;
+		text-align: center;
+		line-height: 37px;
+		text-decoration: none;
+		font-weight: bolder;
+	}
+
+	.button2 {
+		position: absolute;
+		right: 6%;
+
+	}
+</style>
