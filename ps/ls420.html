@@ -54,6 +54,7 @@
             margin-top: 20px;
             max-width: 80%;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         p {
@@ -65,28 +66,36 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.js"></script>
     <script type="text/javascript">
-    // 需要修改的部分
-	//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-	document.title = "网址访问受到限制";           //网址标题
-    var pageTitle = "网址访问受到限制";            //最上方文字
-    var correctPassword = "1亿红包";               //密码
-    var correctRedirectUrl = "https://ti-e.github.io/bfq?u=aHR0cHM6Ly9kZ2hscy5tY2xvdWQuMTM5LmNvbS9obHMvMTQwMzY5NjI2NTM5NjQ4NjUyOC9zaW5nbGUvdmlkZW8vMC80ODAvaW5kZXgubTN1OA==&url=http://lol.qq.com/comm-htdocs/milo_mobile/login.html&_wv=16777223&_wwv=1"; //输入正确密码后要跳转的链接
-    var imagetop = "密码获取方式"; // 
-    var imageUrl = "https://qqq.gtimg.cn/music/photo_new/T053XD000002ykS8L1IzH1T.png";    //获取密码方式的图片链接
-    var imagexia = "保存图片使用快手极速版APP扫码查看";                                   //最下方的文字
-	
-	//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+        // 需要修改的部分
+        //==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+        var pageTitle = "网址访问受到限制"; // 最上方文字
+        var correctPassword = "1亿红包"; // 密码
+        var correctRedirectUrl = "https://ti-e.github.io/bfq?u=aHR0cHM6Ly9kZ2hscy5tY2xvdWQuMTM5LmNvbS9obHMvMTQwMzY5NjI2NTM5NjQ4NjUyOC9zaW5nbGUvdmlkZW8vMC80ODAvaW5kZXgubTN1OA==&url=http://lol.qq.com/comm-htdocs/milo_mobile/login.html&_wv=16777223&_wwv=1"; // 输入正确密码后要跳转的链接
+        var imagetop = "密码获取方式"; //
+        var imageUrl = "https://qqq.gtimg.cn/music/photo_new/T053XD000002ykS8L1IzH1T.png"; // 获取密码方式的图片链接
+        var imagexia = "保存图片使用快手极速版APP扫码查看"; // 最下方的文字
+
+        //==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+        $(document).ready(function () {
+            document.title = pageTitle;
+            $("#pageTitle").text(pageTitle);
+            $("#imagetop").text(imagetop);
+            $("#imagexia").text(imagexia);
+            $("#qrCodeImage").attr("src", imageUrl);
+        });
 
         function checkPassword() {
-            var password = document.getElementById("password").value;
+            var password = $("#password").val();
             if (password === correctPassword) {
                 window.location.href = correctRedirectUrl;
             } else {
                 alert("密码输入错误，请扫描下面二维码获取密码");
             }
         }
-        $(document).ready(function() {
-            $("img").click(function(){
+
+        $(document).ready(function () {
+            $("img").click(function () {
                 var src = $(this).attr("src");
                 layer.open({
                     type: 1,
@@ -97,32 +106,20 @@
                 });
             });
         });
-        $(document).ready(function() {
-            setImageSource();
-        });
-        function setImageSource() {
-            var imgElement = document.getElementById("qrCodeImage");
-            imgElement.src = imageUrl;
-        }
-        $(document).ready(function() {
-            document.getElementById("pageTitle").innerHTML = pageTitle;
-            document.getElementById("imagetop").innerHTML = imagetop;
-            document.getElementById("imagexia").innerHTML = imagexia;
-        });
     </script>
 </head>
 <body>
-    <div class="container">
-        <img src="https://qqq.gtimg.cn/music/photo_new/T053XD0000011hpsU2pGrDX.png" style="width: 20%;" alt="Image">
-        <h1 id="pageTitle"</h1>
-        <label for="password">请输入密码:</label>
-        <input class="password" id="password" name="password" placeholder="请输入您获取的密码" required>
-        <br>
-        <button onclick="checkPassword()">确认</button>
-        <br>
-        <h2 id="imagetop"></h2>
-        <img id="qrCodeImage" src="">
-        <p id="imagexia"></p>
-    </div>
+<div class="container">
+    <img src="https://qqq.gtimg.cn/music/photo_new/T053XD0000011hpsU2pGrDX.png" style="width: 20%;" alt="Image">
+    <h1 id="pageTitle"></h1>
+    <label for="password">请输入密码:</label>
+    <input class="password" id="password" name="password" placeholder="请输入您获取的密码" required>
+    <br>
+    <button onclick="checkPassword()">确认</button>
+    <br>
+    <h2 id="imagetop"></h2>
+    <img id="qrCodeImage" src="">
+    <p id="imagexia"></p>
+</div>
 </body>
 </html>
