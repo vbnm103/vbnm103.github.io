@@ -9,56 +9,56 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f2f2f2;  /* 背景颜色为浅灰色 */
-            padding: 10px;  /* 页面内边距为50像素 */
+            background-color: #f2f2f2;
+            padding: 10px;
         }
 
         .container {
-            max-width: 400px;  /* 容器最大宽度为400像素 */
-            margin: 0 auto;  /* 居中对齐容器 */
-            background-color: #ffffff;  /* 容器背景色为白色 */
-            border-radius: 10px;  /* 容器边框圆角弧度为10像素 */
-            padding: 30px;  /* 容器内边距为30像素 */
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);  /* 添加轻微阴影效果 */
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            color: #333333;  /* 标题颜色为深灰色 */
+            color: #333333;
         }
 
         label {
             display: block;
-            margin-bottom: 10px;  /* 底边距为10像素 */
-            color: #666666;  /* 标签颜色为浅灰色 */
-            font-weight: bold;  /* 标签字体加粗 */
+            margin-bottom: 10px;
+            color: #666666;
+            font-weight: bold;
         }
 
-        password {
-            width: 100%;  /* 密码输入框宽度占满容器 */
-            padding: 10px;  /* 输入框内边距为10像素 */
-            border: 1px solid #cccccc;  /* 输入框边框为浅灰色 */
-            border-radius: 5px;  /* 输入框边框圆角弧度为5像素 */
+        input.password {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
         }
 
         button {
-            margin-top: 20px;  /* 顶边距为20像素 */
-            padding: 15px 60px;  /* 按钮内边距为10像素顶部和底部，20像素左右 */
-            background-color: #4CAF50;  /* 按钮背景色为绿色 */
-            color: #ffffff;  /* 按钮文本颜色为白色 */
-            border: none;  /* 去除按钮边框 */
-            border-radius: 5px;  /* 按钮边框圆角弧度为5像素 */
-            cursor: pointer;  /* 鼠标悬停时显示手型光标 */
+            margin-top: 20px;
+            padding: 15px 60px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         img {
-            margin-top: 20px;  /* 顶边距为30像素 */
-            max-width: 80%;  /* 图片最大宽度为容器宽度 */
-            border-radius: 5px;  /* 图片边框圆角弧度为5像素 */
+            margin-top: 20px;
+            max-width: 80%;
+            border-radius: 5px;
         }
 
         p {
-            font-size: 15px; /* 设置字体大小为20像素 */
-            font-family: Arial, sans-serif; /* 设置字体样式为Arial或sans-serif */
+            font-size: 15px;
+            font-family: Arial, sans-serif;
         }
     </style>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/skin/default/layer.css">
@@ -112,17 +112,17 @@
     </script>
 </head>
 <body>
-<div class="container">
-	<img src="https://qqq.gtimg.cn/music/photo_new/T053XD0000011hpsU2pGrDX.png" style="width: 20%;" alt="Image">
-    <h1 id="pageTitle"></h1>
-    <label for="password">请输入密码:</label>
-    <input class="password" id="password" name="password" placeholder="请输入您获取的密码"  required>
-    <br>
-    <button onclick="checkPassword()">确认</button>
-    <br>
-    <h2 id="imagetop"></h2>
-    <img id="qrCodeImage" src="">
-    <p id="imagexia"></p>
-</div>
+    <div class="container">
+        <img src="https://qqq.gtimg.cn/music/photo_new/T053XD0000011hpsU2pGrDX.png" style="width: 20%;" alt="Image">
+        <h1 id="pageTitle"</h1>
+        <label for="password">请输入密码:</label>
+        <input class="password" id="password" name="password" placeholder="请输入您获取的密码" required>
+        <br>
+        <button onclick="checkPassword()">确认</button>
+        <br>
+        <h2 id="imagetop"></h2>
+        <img id="qrCodeImage" src="">
+        <p id="imagexia"></p>
+    </div>
 </body>
 </html>
